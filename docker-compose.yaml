@@ -1,0 +1,17 @@
+services:
+  proxy_reverso:
+    image: nginx
+    ports:
+      - "80:80"
+    networks:
+      - bridge 
+      - dbgate_default
+      - projeto_extensao_iv_backend
+    volumes:
+      - ./nginx:/etc/nginx/
+    restart: always
+
+networks:
+  bridge: 
+  dbgate_default:
+  projeto_extensao_iv_backend:
